@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.service;
+/*package com.grupo3.allshoesback.service;
 
 import java.util.List;
 
@@ -13,3 +13,4 @@ public interface ShoeSizeService {
 	Boolean decreaseStock(String shoeid, String sizeid, Integer amount);
 	
 }
+*/

@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.controller;
+/*package com.grupo3.allshoesback.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,12 +21,12 @@ public class ShoeController {
 	@Autowired
 	public ShoeController(ShoeService service) {this.service = service;}
 	
-	/*@GetMapping("/shoes")
+	@GetMapping("/shoes")
 	public ResponseEntity<List<Shoe>> getShoes() {
 		List<Shoe> shoes =service.getShoes();
 		if (shoes != null) {return ResponseEntity.ok(shoes);}
 		else {return ResponseEntity.ok(Collections.emptyList());}
-	}*/
+	}
 	
 	@GetMapping("/shoes/{shoeid}")
 	public ResponseEntity<Shoe> getShoeid(@PathVariable String shoeid) {
@@ -35,12 +35,12 @@ public class ShoeController {
 		else {return ResponseEntity.notFound().build();}
 	}
 	
-	/*@GetMapping("/shoes")
+	@GetMapping("/shoes")
 	public ResponseEntity<List<Shoe>> getShoesByAttribute(@RequestParam String attr, @RequestParam String val) {
 		List<Shoe> shoes = service.getShoesByAttribute(attr, val);
 		if (shoes != null) {return ResponseEntity.ok(shoes); } 
 		else { return ResponseEntity.notFound().build();}
-	}*/
+	}
 	
 	@GetMapping("/shoes")
 	public ResponseEntity<List<Shoe>> getShoes(@RequestParam Optional<String> title, @RequestParam Optional<String> description, @RequestParam Optional<String> image,
@@ -53,3 +53,4 @@ public class ShoeController {
 		else { return ResponseEntity.notFound().build();}
 	}
 }
+*/

@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.controller;
+/*package com.grupo3.allshoesback.controller;
 
 import java.util.List;
 
@@ -44,3 +44,4 @@ private ShoeSizeService service;
 	}
 
 }
+*/

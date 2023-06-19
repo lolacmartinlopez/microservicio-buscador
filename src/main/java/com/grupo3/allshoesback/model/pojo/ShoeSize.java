@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.model.pojo;
+/*package com.grupo3.allshoesback.model.pojo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
@@ -40,3 +40,4 @@ public class ShoeSize{
 	@Column(name = "stock")
 	private Integer stock;
 }
+*/

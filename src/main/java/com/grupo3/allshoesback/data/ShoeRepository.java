@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.data;
+/*package com.grupo3.allshoesback.data;
 
 import java.util.List;
 import java.util.Optional;
@@ -31,3 +31,4 @@ public interface ShoeRepository extends JpaRepository<Shoe, Long>{
 			String image, Float price, String brand, String category);
 
 }
+*/

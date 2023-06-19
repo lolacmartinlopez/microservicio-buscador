@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.service;
+/*package com.grupo3.allshoesback.service;
 
 import java.util.List;
 
@@ -15,3 +15,4 @@ public interface ShoeService {
 	List<Shoe> getShoesByCombinedSearch(String title, String description, String image, Float price, String brand, String category);
 
 }
+*/

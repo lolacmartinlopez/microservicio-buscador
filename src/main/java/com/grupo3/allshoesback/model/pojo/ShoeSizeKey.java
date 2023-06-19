@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.model.pojo;
+/*package com.grupo3.allshoesback.model.pojo;
 
 import java.io.Serializable;
 
@@ -15,3 +15,4 @@ public class ShoeSizeKey implements Serializable {
     Long sizeId;
 	
 }
+*/

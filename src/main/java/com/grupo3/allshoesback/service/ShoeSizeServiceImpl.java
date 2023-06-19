@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.service;
+/*package com.grupo3.allshoesback.service;
 
 import java.util.List;
 
@@ -43,3 +43,4 @@ public class ShoeSizeServiceImpl implements ShoeSizeService{
 
 
 }
+*/

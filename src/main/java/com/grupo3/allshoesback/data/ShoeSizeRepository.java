@@ -1,4 +1,4 @@
-package com.grupo3.allshoesback.data;
+/*package com.grupo3.allshoesback.data;
 
 import java.util.List;
 
@@ -21,3 +21,4 @@ public interface ShoeSizeRepository extends JpaRepository<ShoeSize, Long>{
     int decreaseStock(Integer amount, Long shoeId, Long sizeId);
 
 }
+*/
