@@ -25,6 +25,7 @@ public class ElasticShoeController {
 
 	private final ElasticShoeService service;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/shoes")
 	public ResponseEntity<List<ElasticShoe>> getShoes(
 			@RequestParam(required = false) String title,
