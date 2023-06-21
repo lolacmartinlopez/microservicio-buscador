@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ public class ElasticSizeController {
 
 private final ElasticSizeService service;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/sizes")
 	public ResponseEntity<List<ElasticSize>> getProducts(
 			@RequestParam(required = false) String name) {
@@ -38,6 +40,7 @@ private final ElasticSizeService service;
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/sizes/{sizeId}")
 	public ResponseEntity<ElasticSize> getSize(@PathVariable String sizeId) {
 
@@ -64,6 +67,7 @@ private final ElasticSizeService service;
 
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/elastic/sizes")
 	public ResponseEntity<ElasticSize> createSize(@RequestBody CreateSizeRequest request) {
 		ElasticSize size = service.createSize(request);

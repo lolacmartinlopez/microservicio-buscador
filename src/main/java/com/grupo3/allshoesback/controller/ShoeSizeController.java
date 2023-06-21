@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -22,6 +23,7 @@ private ShoeSizeService service;
 	@Autowired
 	public ShoeSizeController(ShoeSizeService service) {this.service = service;}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/shoes/{shoeid}/sizes")
 	public ResponseEntity<List<ShoeSize>> getShoeSizes(@PathVariable String shoeid) {
 		List<ShoeSize> shoeSizes = service.getShoeSizes(shoeid);
@@ -29,6 +31,7 @@ private ShoeSizeService service;
 		else {return ResponseEntity.notFound().build();}
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/shoes/{shoeid}/sizes/{sizeid}")
 	public ResponseEntity<Integer> getStock(@PathVariable String shoeid, @PathVariable String sizeid) {
 		Integer stock = service.getStock(shoeid, sizeid);

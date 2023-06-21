@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 public class ElasticShoeController {
 
 	private final ElasticShoeService service;
-	
+
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/shoes")
 	public ResponseEntity<List<ElasticShoe>> getShoes(
@@ -45,6 +45,7 @@ public class ElasticShoeController {
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/shoes/{shoeId}")
 	public ResponseEntity<ElasticShoe> getShoe(@PathVariable String shoeId) {
 
@@ -71,6 +72,7 @@ public class ElasticShoeController {
 
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/elastic/shoes")
 	public ResponseEntity<ElasticShoe> createShoe(@RequestBody CreateShoeRequest request) {
 		ElasticShoe shoe = service.createShoe(request);
