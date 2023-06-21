@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -71,6 +72,7 @@ public class ElasticShoeController {
 
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/elastic/shoes")
 	public ResponseEntity<ElasticShoe> createShoe(@RequestBody CreateShoeRequest request) {
 		ElasticShoe shoe = service.createShoe(request);
