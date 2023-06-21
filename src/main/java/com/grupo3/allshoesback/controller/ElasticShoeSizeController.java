@@ -26,6 +26,7 @@ public class ElasticShoeSizeController {
 
 	private final ElasticShoeSizeService service;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/shoesizes")
 	public ResponseEntity<List<ElasticShoeSize>> getShoeSizess(
 			@RequestParam(required = false) String shoeid,
@@ -41,6 +42,7 @@ public class ElasticShoeSizeController {
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/shoesizes/{shoesizeId}")
 	public ResponseEntity<ElasticShoeSize> getShoeSize(@PathVariable String shoesizeId) {
 

@@ -22,6 +22,7 @@ private ShoeSizeService service;
 	@Autowired
 	public ShoeSizeController(ShoeSizeService service) {this.service = service;}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/shoes/{shoeid}/sizes")
 	public ResponseEntity<List<ShoeSize>> getShoeSizes(@PathVariable String shoeid) {
 		List<ShoeSize> shoeSizes = service.getShoeSizes(shoeid);
@@ -29,6 +30,7 @@ private ShoeSizeService service;
 		else {return ResponseEntity.notFound().build();}
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/shoes/{shoeid}/sizes/{sizeid}")
 	public ResponseEntity<Integer> getStock(@PathVariable String shoeid, @PathVariable String sizeid) {
 		Integer stock = service.getStock(shoeid, sizeid);

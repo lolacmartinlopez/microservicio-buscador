@@ -21,6 +21,7 @@ public class ShoeController {
 	@Autowired
 	public ShoeController(ShoeService service) {this.service = service;}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/shoes")
 	public ResponseEntity<List<Shoe>> getShoes() {
 		List<Shoe> shoes =service.getShoes();
@@ -28,6 +29,7 @@ public class ShoeController {
 		else {return ResponseEntity.ok(Collections.emptyList());}
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/shoes/{shoeid}")
 	public ResponseEntity<Shoe> getShoeid(@PathVariable String shoeid) {
 		Shoe shoe = service.getShoeid(shoeid);
@@ -35,6 +37,7 @@ public class ShoeController {
 		else {return ResponseEntity.notFound().build();}
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/shoes")
 	public ResponseEntity<List<Shoe>> getShoesByAttribute(@RequestParam String attr, @RequestParam String val) {
 		List<Shoe> shoes = service.getShoesByAttribute(attr, val);
@@ -42,6 +45,7 @@ public class ShoeController {
 		else { return ResponseEntity.notFound().build();}
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/shoes")
 	public ResponseEntity<List<Shoe>> getShoes(@RequestParam Optional<String> title, @RequestParam Optional<String> description, @RequestParam Optional<String> image,
 			@RequestParam Optional<String> price, @RequestParam Optional<String> brand, @RequestParam Optional<String> category) {

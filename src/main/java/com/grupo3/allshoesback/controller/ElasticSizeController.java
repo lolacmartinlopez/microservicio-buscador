@@ -25,6 +25,7 @@ public class ElasticSizeController {
 
 private final ElasticSizeService service;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/sizes")
 	public ResponseEntity<List<ElasticSize>> getProducts(
 			@RequestParam(required = false) String name) {
@@ -38,6 +39,7 @@ private final ElasticSizeService service;
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/sizes/{sizeId}")
 	public ResponseEntity<ElasticSize> getSize(@PathVariable String sizeId) {
 
