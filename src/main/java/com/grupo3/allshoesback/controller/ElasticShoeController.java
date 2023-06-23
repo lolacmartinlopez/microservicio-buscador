@@ -27,7 +27,7 @@ public class ElasticShoeController {
 	private final ElasticShoeService service;
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/shoes")
+	@GetMapping("/shoes")
 	public ResponseEntity<List<ElasticShoe>> getShoes(
 			@RequestParam(required = false) String title,
 			@RequestParam(required = false) String description, 
@@ -46,7 +46,7 @@ public class ElasticShoeController {
 	}
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/shoes/{shoeId}")
+	@GetMapping("/shoes/{shoeId}")
 	public ResponseEntity<ElasticShoe> getShoe(@PathVariable String shoeId) {
 
 		ElasticShoe shoe = service.getShoe(shoeId);
@@ -59,7 +59,7 @@ public class ElasticShoeController {
 
 	}
 
-	@DeleteMapping("/elastic/shoes/{shoeId}")
+	@DeleteMapping("/shoes/{shoeId}")
 	public ResponseEntity<Void> deleteShoe(@PathVariable String shoeId) {
 
 		Boolean removed = service.removeShoe(shoeId);
@@ -73,7 +73,7 @@ public class ElasticShoeController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@PostMapping("/elastic/shoes")
+	@PostMapping("/shoes")
 	public ResponseEntity<ElasticShoe> createShoe(@RequestBody CreateShoeRequest request) {
 		ElasticShoe shoe = service.createShoe(request);
 		
