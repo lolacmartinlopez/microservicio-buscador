@@ -27,7 +27,7 @@ public class ElasticSizeController {
 private final ElasticSizeService service;
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/sizes")
+	@GetMapping("/sizes")
 	public ResponseEntity<List<ElasticSize>> getProducts(
 			@RequestParam(required = false) String name) {
 
@@ -41,7 +41,7 @@ private final ElasticSizeService service;
 	}
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/sizes/{sizeId}")
+	@GetMapping("/sizes/{sizeId}")
 	public ResponseEntity<ElasticSize> getSize(@PathVariable String sizeId) {
 
 		ElasticSize size = service.getSize(sizeId);
@@ -54,7 +54,7 @@ private final ElasticSizeService service;
 
 	}
 
-	@DeleteMapping("/elastic/sizes/{sizeId}")
+	@DeleteMapping("/sizes/{sizeId}")
 	public ResponseEntity<Void> deleteSize(@PathVariable String sizeId) {
 
 		Boolean removed = service.removeSize(sizeId);
@@ -68,7 +68,7 @@ private final ElasticSizeService service;
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@PostMapping("/elastic/sizes")
+	@PostMapping("/sizes")
 	public ResponseEntity<ElasticSize> createSize(@RequestBody CreateSizeRequest request) {
 		ElasticSize size = service.createSize(request);
 		
