@@ -28,7 +28,7 @@ public class ElasticShoeSizeController {
 	private final ElasticShoeSizeService service;
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/shoesizes")
+	@GetMapping("/shoesizes")
 	public ResponseEntity<List<ElasticShoeSize>> getShoeSizess(
 			@RequestParam(required = false) String shoeid,
 			@RequestParam(required = false) String sizeid, 
@@ -44,7 +44,7 @@ public class ElasticShoeSizeController {
 	}
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/shoesizes/{shoesizeId}")
+	@GetMapping("/shoesizes/{shoesizeId}")
 	public ResponseEntity<ElasticShoeSize> getShoeSize(@PathVariable String shoesizeId) {
 
 		ElasticShoeSize shoeSize = service.getShoeSize(shoesizeId);
@@ -57,7 +57,7 @@ public class ElasticShoeSizeController {
 
 	}
 
-	@DeleteMapping("/elastic/shoesizes/{shoesizeId}")
+	@DeleteMapping("/shoesizes/{shoesizeId}")
 	public ResponseEntity<Void> deleteShoeSize(@PathVariable String shoesizeId) {
 
 		Boolean removed = service.removeShoeSize(shoesizeId);
@@ -71,7 +71,7 @@ public class ElasticShoeSizeController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@PostMapping("/elastic/shoesizes")
+	@PostMapping("/shoesizes")
 	public ResponseEntity<ElasticShoeSize> createShoeSize(@RequestBody CreateShoeSizeRequest request) {
 		ElasticShoeSize shoeSize = service.createShoeSize(request);
 		
@@ -82,7 +82,7 @@ public class ElasticShoeSizeController {
 		}
 	}
 	
-	@PutMapping("/elastic/shoesizes/{shoesizeId}")
+	@PutMapping("/shoesizes/{shoesizeId}")
 	public ResponseEntity<Boolean> decreaseStock(@PathVariable String shoesizeId, @RequestParam Integer amount) {
 		Boolean removed = service.decreaseStock(shoesizeId, amount);
 
